@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" Title="Contect us"
+             x:Class="RetailerApp.View.ContactUs" BackgroundColor="#f5f8fa">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="" Order="Primary" Priority="1">
+
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+
+
+    <StackLayout Padding="17" BackgroundColor="White">
+
+        <Label Text="Name" FontSize="Small"  TextColor="#16325c"></Label>
+        <Entry Placeholder="Name" Text="ShopR360" BackgroundColor="Transparent" PlaceholderColor="#16325c" TextColor="#16325c"></Entry>
+
+        <Label Text="Email" FontSize="Small" TextColor="#16325c"></Label>
+        <Entry Placeholder="Name" Text="support@shopr360.com" BackgroundColor="Transparent" PlaceholderColor="#16325c" TextColor="#16325c"></Entry>
+
+        <Label Text="Query" FontSize="Small" TextColor="#16325c"></Label>
+        <Entry Placeholder="Name" Text="Write your query here" BackgroundColor="Transparent" PlaceholderColor="#16325c" TextColor="#16325c"></Entry>
+        
+    </StackLayout>
+          
+   
+
+</ContentPage>

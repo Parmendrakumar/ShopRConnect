@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RetailerApp.View.Notification"
+             Title="Notifications">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand" BackgroundColor="#f5f8fa">
+            <Grid>
+           
+            <ListView x:Name="activelistview"  HasUnevenRows="True" IsVisible="True" ItemsSource="{Binding active}" SeparatorColor="Black" Margin="0,0,0,0">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <!--<TextCell Text="{Binding Title}" Height="200" Detail="{Binding Detail}" DetailColor="Black" TextColor="Red"  />-->
+
+                        <ViewCell>
+                            <StackLayout BackgroundColor="White"
+								Padding="20,10,20,10"
+								 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                              
+                                        <Label Text="{Binding Dt}" TextColor="Gray" FontSize="12" VerticalOptions="CenterAndExpand" />
+
+                                        <Label Text="{Binding Name}"  TextColor="#16325c" FontSize="14" VerticalOptions="CenterAndExpand" />
+                                       
+
+                                  
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+             <Image x:Name="emptylist" Source="NotificationEmptyIcon.png" IsVisible="True" Aspect="AspectFill"></Image>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

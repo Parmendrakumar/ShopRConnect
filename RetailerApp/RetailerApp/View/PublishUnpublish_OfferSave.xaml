@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" Title="Offer"
+             x:Class="RetailerApp.View.PublishUnpublish_OfferSave">
+    <ContentPage.ToolbarItems>
+        <!--<ToolbarItem Text ="Item 1"  
+                Priority="0" Order="Primary" />-->
+        <ToolbarItem Text="Publish"          
+              Priority="2" Order="Secondary" Clicked="Publish" />
+
+        <ToolbarItem Text ="Delete"  
+              Priority="3"  Order="Secondary" Clicked="Delete" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout Padding="10,20,10,10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="200" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                   
+                    
+                </Grid.RowDefinitions>
+                <Image x:Name="offerimage" Grid.Row="0" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" Aspect="AspectFill"></Image>
+                <Label Text="Offer Description" Grid.Row="1" TextColor="Black" FontSize="Medium"></Label>
+                <Label x:Name="offer1" Grid.Row="2"></Label>
+                <!--<Label x:Name="entryoffer1" Grid.Row="2" IsVisible="False"></Label>-->
+
+                <Label Text="Offer terms and conditions" Grid.Row="3" TextColor="Black" FontSize="Medium"></Label>
+                <Label x:Name="tc1" Grid.Row="4"></Label>
+                <!--<Entry x:Name="entrytc1" Grid.Row="4" IsVisible="False"></Entry>-->
+
+                <Label Text="Offer Valid From" Grid.Row="5" TextColor="Black" FontSize="Medium"></Label>
+                <Label x:Name="validfrom1" Grid.Row="6"></Label>
+                <!--<Entry x:Name="entryvalidfrom1" Grid.Row="3" IsVisible="False"></Entry>-->
+
+                <Label Text="Offer Valid To" Grid.Row="7" TextColor="Black" FontSize="Medium"></Label>
+                <Label x:Name="validto1" Grid.Row="8"></Label>
+                <!--<Entry x:Name="entryvalidto1" Grid.Row="4" IsVisible="False"></Entry>-->
+            </Grid>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

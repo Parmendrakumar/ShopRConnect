@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RetailerApp.View.CategorySubCategory1"
+              Title="Category Sub-Category">
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="88*"/>
+            <RowDefinition Height="12*"/>
+        </Grid.RowDefinitions>
+
+
+        <Grid Grid.Column="0" Grid.Row="0" BackgroundColor="White">
+
+            <ListView x:Name="lstView" ItemTapped="lstView_ItemSelected" ItemsSource="{Binding CategoryItems}" SeparatorColor="Black" Margin="0,0,0,0" RowHeight="60">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <!--<TextCell Text="{Binding Title}" Height="200" Detail="{Binding Detail}" DetailColor="Black" TextColor="Red"  />-->
+
+                        <ViewCell>
+                            <StackLayout BackgroundColor="White"
+								Padding="0,5,0,5"
+								 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <StackLayout BackgroundColor="Transparent"
+									 HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"
+									 Spacing="0"
+									 Margin="20,0,20,0">
+                                    <Label Text="{Binding CategoryName}" TextColor="{Binding TextColor}" FontSize="14" VerticalOptions="CenterAndExpand" />
+                                    <Label BindingContext="{Binding CategoryId}"></Label>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+        </Grid>
+
+
+        <Grid Grid.Column="1" Grid.Row="0" BackgroundColor="#f5f8fa">
+
+            <ListView x:Name="lstView2" ItemTapped="lstView2_ItemTapped" IsVisible="True" ItemsSource="{Binding SubCategory}" SeparatorColor="Black" Margin="0,0,0,0" RowHeight="50">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <!--<TextCell Text="{Binding Title}" Height="200" Detail="{Binding Detail}" DetailColor="Black" TextColor="Red"  />-->
+
+                        <ViewCell>
+                            <StackLayout BackgroundColor="#f5f8fa"
+								Padding="0,5,0,5"
+								 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <StackLayout BackgroundColor="Transparent"
+									 HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"
+									 Spacing="0"
+									 Margin="20,0,20,0">
+
+
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="5*"></ColumnDefinition>
+                                            <ColumnDefinition Width="95*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Image Source="{Binding img}" Grid.Column="0"></Image>
+                                        <Label Text="{Binding SubCategoryName}" Grid.Column="1" TextColor="{Binding SubTextColor}" FontSize="14" VerticalOptions="CenterAndExpand" />
+                                        <Label BindingContext="{Binding SubCategoryID}"></Label>
+                                        <Label BindingContext="{Binding CategoryID}"></Label>
+                                    </Grid>
+
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+        </Grid>
+
+        <!--<Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="#f24245" HorizontalOptions="FillAndExpand">-->
+        <StackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HeightRequest="50" VerticalOptions="End" Orientation="Horizontal" BackgroundColor="#f24245">
+            <!--<Button Clicked="Button_Clicked" TextColor="White" FontSize="16" BackgroundColor="#f24245">
+                <Button.Text>
+                   Look Up
+     Send your query to retailers
+                </Button.Text>
+            </Button>-->
+            <Label FontSize="Large" Text="Send" TextColor="White" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Senddata" />
+                </Label.GestureRecognizers>
+            </Label>
+
+        </StackLayout>
+        <!--</Grid>-->
+
+    </Grid>
+</ContentPage>

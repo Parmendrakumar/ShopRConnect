@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RetailerApp.View.Profile"
+             xmlns:ci="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text=""  Order="Primary" Priority="1">
+
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ScrollView>
+      
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="65*"/>
+           
+        </Grid.RowDefinitions>
+        <StackLayout Grid.Row="0" BackgroundColor="#17a39d">
+
+           
+                <ci:CircleImage x:Name="userProfile" HorizontalOptions="CenterAndExpand"
+            HeightRequest="120"   
+            WidthRequest="120"  
+            BorderThickness = "3"
+            Source="profile.png"   
+            Aspect="AspectFill">
+
+                </ci:CircleImage>
+                <Button Text="Update" Clicked="Button_Clicked" CornerRadius="14" Margin="0,0,0,0" Font="12" HeightRequest="35" BackgroundColor="#00396b" TextColor="White" HorizontalOptions="Center" VerticalOptions="End"></Button>
+            
+        </StackLayout>
+
+            <ActivityIndicator x:Name="act" IsVisible="False" IsRunning="False" Color="Red"></ActivityIndicator>
+
+            <StackLayout Grid.Row="1" BackgroundColor="#f5f8fa">
+                    <ListView x:Name="activelistview" ItemSelected="activelistview_ItemSelected"  HasUnevenRows="True" IsVisible="True" ItemsSource="{Binding active}" SeparatorVisibility="None" Margin="0,0,0,0">
+
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <!--<TextCell Text="{Binding Title}" Height="200" Detail="{Binding Detail}" DetailColor="Black" TextColor="Red"  />-->
+
+                                <ViewCell>
+                                    <StackLayout BackgroundColor="White" Padding="20,5,10,0" Spacing="10"
+								 Orientation="Horizontal">
+
+                                        <Image Source="{Binding img}" VerticalOptions="CenterAndExpand" />
+
+                                    <Label Text="{Binding Name}"  TextColor="#16325c" FontSize="16"  VerticalOptions="CenterAndExpand" />
+
+
+
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+             
+            </StackLayout>
+              
+      
+      
+    </Grid>
+     
+    </ScrollView>
+</ContentPage>

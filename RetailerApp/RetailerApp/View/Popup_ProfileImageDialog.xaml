@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"     
+             x:Class="RetailerApp.View.Popup_ProfileImageDialog"
+                >
+    <pages:PopupPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="EntryStyle" TargetType="Entry">
+                <Setter Property="PlaceholderColor" Value="#9cdaf1"/>
+                <Setter Property="TextColor" Value="#7dbbe6"/>
+
+            </Style>
+        </ResourceDictionary>
+    </pages:PopupPage.Resources>
+
+   
+    <ScrollView
+    HorizontalOptions="FillAndExpand"
+    VerticalOptions="End">
+        <AbsoluteLayout>
+           
+            <Frame
+        x:Name="FrameContainer"
+        Margin="0"
+        HorizontalOptions="FillAndExpand"
+        BackgroundColor="White">
+               
+                <StackLayout>
+                    <StackLayout Margin="0" Padding="-25,-20,-25,-35" >                       
+                        <Grid HorizontalOptions="FillAndExpand" Padding="15,0,15,0" BackgroundColor="#17a39d" RowSpacing="-10" VerticalOptions="EndAndExpand">                         
+                         
+                            <Label HorizontalOptions="Start" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HeightRequest="60" TextColor="#17a39d" Text="Add Store Photo"  FontSize="18" >
+                            </Label>
+                            <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HeightRequest="60" TextColor="White" Text="Add Photo"  FontSize="18" >
+                            </Label>                          
+                        </Grid>
+                    </StackLayout>
+
+                    <StackLayout Padding="20" Spacing="10">
+                        <Label Text=""></Label>
+                      
+                        <Label x:Name="camera" Text="Take Picture" TextColor="#16325c" FontSize="18">
+                          <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="CameraOption" />
+                          </Label.GestureRecognizers>
+                        </Label>
+                      <BoxView HorizontalOptions="FillAndExpand" HeightRequest="2" Color="#000000" ></BoxView>
+                        <Label x:Name="gallery" Text="Gallery" TextColor="#16325c" FontSize="18">
+                          <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="GalleryOption" />
+                          </Label.GestureRecognizers>
+                        </Label>
+                      <BoxView HorizontalOptions="FillAndExpand" HeightRequest="2" Color="#000000" ></BoxView>
+                        <!--<Label Text="Photos" TextColor="#16325c" FontSize="18">
+                          <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="GalleryOption" />
+                          </Label.GestureRecognizers>
+                        </Label>-->                       
+                        <ActivityIndicator x:Name="Actimageupload" Color="Red" IsRunning="False"></ActivityIndicator>                     
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+        </AbsoluteLayout>
+    </ScrollView>
+</pages:PopupPage>

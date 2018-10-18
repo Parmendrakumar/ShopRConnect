@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" BackgroundColor="#17a39d"
+             x:Class="RetailerApp.View.Login" NavigationPage.HasNavigationBar="True"
+             xmlns:local="clr-namespace:RetailerApp.Behavior"
+             Title="Login">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Signup" Order="Primary" Priority="1"  Clicked="ToolSignup_Clicked">
+
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>      
+        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="12*"/>
+            </Grid.RowDefinitions>
+
+       
+            <StackLayout Orientation="Vertical" Grid.Row="0" Margin="0,30,0,0" Padding="17">
+                <!--<Button Text="Signup with Facebook" Image="facebook.png" HeightRequest="50" TextColor="White" BackgroundColor="#4460a0"></Button>
+                <Button Text="Signup with Google" Image="google_plus.png" HeightRequest="50" TextColor="White" BackgroundColor="#ed4958"></Button>
+                <BoxView></BoxView>-->
+              
+                <Image Source="icon.png" HeightRequest="100" WidthRequest="100" HorizontalOptions="Center"></Image>
+                <StackLayout Orientation="Horizontal" Spacing="0" HorizontalOptions="CenterAndExpand">
+                <Label Text="ShopR" TextColor="DarkGray" Margin="0,0,0,0" FontSize="24" HorizontalOptions="Center"></Label>
+                    <Label Text="Connect" TextColor="DarkGray" Margin="0,0,0,0"  FontAttributes="Bold" FontSize="24" HorizontalOptions="Center"></Label>
+                </StackLayout>
+                <BoxView></BoxView>
+                <Entry x:Name="mobile" Keyboard="Numeric" Placeholder="Mobile Number" BackgroundColor="Transparent" PlaceholderColor="White" TextColor="White">
+                    <Entry.Behaviors>
+                        <local:EntryLengthValidatorBehavior MaxLength="10"></local:EntryLengthValidatorBehavior>
+                    </Entry.Behaviors>
+                </Entry>
+                <!--<Entry Placeholder="Password" IsPassword="True" TextColor="White"></Entry>-->
+                <!--<Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        --><!--<ColumnDefinition Width="20"/>--><!--
+                    </Grid.ColumnDefinitions>-->
+                    <Entry x:Name="password" Placeholder="Password" Grid.Column="0" BackgroundColor="Transparent" PlaceholderColor="White" IsPassword="True" TextColor="White">
+                    <Entry.Behaviors>
+                        <local:PasswordValidationBehavior/>
+                    </Entry.Behaviors>
+                </Entry>
+                    <!--<Image Source="passwordEye.png" Grid.Column="1"></Image>-->
+                <!--</Grid>-->
+                <Label Text="Forgot Password?" FontSize="16" TextColor="White" HorizontalOptions="End">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ForgotPassword" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <ActivityIndicator x:Name="Alogin" Color="Red" IsRunning="False"></ActivityIndicator>
+            </StackLayout>
+            <!--<StackLayout Grid.Row="1" VerticalOptions="End">
+                <StackLayout x:Name="ButtonStackLayout" Orientation="Horizontal" Spacing="10" Padding="10,10,10,10" BackgroundColor="#f24245">
+                    <StackLayout HorizontalOptions="StartAndExpand"></StackLayout>
+                    <Label x:Name="ButtonLabel" FontSize="Medium" Text="Login" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <StackLayout HorizontalOptions="EndAndExpand"></StackLayout>
+                </StackLayout>
+            </StackLayout>-->
+            <StackLayout Grid.Row="1" HeightRequest="50" VerticalOptions="End" Orientation="Horizontal" BackgroundColor="#f24245">
+
+                <Label x:Name="ButtonLabel" FontSize="Medium" Text="Login" TextColor="White" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"
+               NumberOfTapsRequired="1"/>
+                </StackLayout.GestureRecognizers>
+
+            </StackLayout>
+        </Grid>
+       
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RetailerApp.View.MapPage"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             Title="Search Place">
+    <StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Entry x:Name="searchQueryEntry" Placeholder="Enter place to search"
+             HorizontalOptions="FillAndExpand"></Entry>
+            <Button Text="Search" Image="" Clicked="OnSearch"></Button>
+        </StackLayout>
+        
+        <maps:Map x:Name="gmapsView" HorizontalOptions="FillAndExpand" 
+         VerticalOptions="FillAndExpand"></maps:Map>
+      
+    </StackLayout>
+</ContentPage>

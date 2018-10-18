@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RetailerApp.View.RetailerInformation"
+             xmlns:controls="clr-namespace:RetailerApp.CustomControls" 
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             Title="Retailer Information">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="20,15,20,20">
+                <Image Source="EditRetailer.png" HorizontalOptions="CenterAndExpand" Aspect="AspectFit"></Image>
+            </StackLayout>
+            <StackLayout Padding="25,20,25,20" Spacing="-1">
+                <Label Text=""></Label>
+                <Label Text="Retailer(max length:X characters)*"></Label>
+                <Entry Text="Allen Solly" TextColor="#16325c"></Entry>
+                <Label Text="Outlet Address(max length:X characters)"></Label>
+                <Entry x:Name="address" Text="ShopR360" Focused="address_Focused" TextColor="#16325c">
+                      
+                    </Entry>
+                <Label Text="Contact Numbers(with country code,comma separated)"></Label>
+                <Entry Text="+91-11-1234567890, +91-9876543210" TextColor="#16325c"></Entry>
+                <Label Text="Opening Hours"></Label>
+                <Editor Text="11:00 AM to 11:00 PM Tuesday Closed" Focused="OpeningHours_Focused" TextColor="#16325c"></Editor>
+                    <Label Text=""></Label>
+                    <!--<controls:CustomPicker Title="Facilities" Focused="ColumnPicker_Focused" Image="drop"  TextColor="#16325c" x:Name="ColumnPicker" HorizontalOptions="FillAndExpand">
+                        <controls:CustomPicker.Items>
+                            <x:String>Facilities</x:String>
+                        </controls:CustomPicker.Items>
+                        <controls:CustomPicker.SelectedIndex>0</controls:CustomPicker.SelectedIndex>
+                        </controls:CustomPicker>
+                    <Label Text=""></Label>   
+                    <controls:CustomPicker Title="Category" Image="drop" TextColor="#16325c" x:Name="ColumnPicker2" HorizontalOptions="FillAndExpand">
+                        <controls:CustomPicker.Items>
+                            <x:String>Category</x:String>
+                        </controls:CustomPicker.Items>
+                        <controls:CustomPicker.SelectedIndex>0</controls:CustomPicker.SelectedIndex>
+                    </controls:CustomPicker>
+                    <Label Text=""></Label>
+                    <controls:CustomPicker Title="Sub Category" Image="drop" TextColor="#16325c" x:Name="ColumnPicker3" HorizontalOptions="FillAndExpand">
+                        <controls:CustomPicker.Items>
+                            <x:String>Sub Category</x:String>
+                        </controls:CustomPicker.Items>
+                        <controls:CustomPicker.SelectedIndex>0</controls:CustomPicker.SelectedIndex>
+                    </controls:CustomPicker>
+                    <Label Text=""></Label>-->
+
+                    <Editor Text="Facilities" Focused="Facilities_Focused" TextColor="#16325c"></Editor>
+                    <Label Text=""></Label>
+                    <Editor Text="Category" Focused="Category_Focused" TextColor="#16325c"></Editor>
+                    <Label Text=""></Label>
+                    <Editor Text="Sub_Category" Focused="Sub_Category_Focused"  TextColor="#16325c"></Editor>
+                    <Label Text=""></Label>
+                </StackLayout>
+                <StackLayout HeightRequest="300" WidthRequest="300" Padding="10,10,10,10">
+                    <maps:Map x:Name="gmapsView" IsShowingUser="True">                       
+                    </maps:Map>
+                </StackLayout>
+                <BoxView></BoxView>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

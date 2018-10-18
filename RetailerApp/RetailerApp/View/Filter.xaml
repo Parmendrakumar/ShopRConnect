@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RetailerApp.View.Filter" NavigationPage.HasNavigationBar="False">
+   
+        <ScrollView>
+        <StackLayout VerticalOptions="FillAndExpand">
+
+            <StackLayout Orientation="Horizontal" BackgroundColor="#17a39d">
+
+                <Grid  Margin="25" RowSpacing="-15" HeightRequest="40" HorizontalOptions="FillAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20*" />
+                        <ColumnDefinition Width="60*" />
+                        <ColumnDefinition Width="20*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
+                    <!--<Label Text="Signup" Grid.Column="0"  Grid.Row="0" Grid.ColumnSpan="1" VerticalTextAlignment="Center" HorizontalOptions="End" TextColor="White" FontSize="14"></Label>-->
+                    <Image Source="cancel.png" HeightRequest="22" WidthRequest="22" Grid.Column="0"  Grid.Row="0" Grid.ColumnSpan="1" HorizontalOptions="Start" >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"  NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="Select Filters" Grid.Column="1"  Grid.Row="0" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" FontSize="22" TextColor="White"></Label>
+                    <Label Text="Reset" Grid.Column="2"  Grid.Row="0" Grid.ColumnSpan="3" VerticalTextAlignment="Center" HorizontalOptions="End" TextColor="White" FontSize="14"></Label>
+
+                    <Label Text="Offers" Grid.Column="1"  Grid.Row="1" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" FontSize="14" TextColor="White"></Label>
+                </Grid>
+
+            </StackLayout>
+
+
+            <Grid VerticalOptions="FillAndExpand">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="88*"/>
+                    <RowDefinition Height="12*"/>
+                </Grid.RowDefinitions>
+
+
+                <Grid Grid.Column="0" Grid.Row="0" BackgroundColor="White">
+
+                    <ListView x:Name="lstView" ItemTapped="lstView_ItemSelected"  ItemsSource="{Binding Items}" SeparatorColor="Black" Margin="0,0,0,0" RowHeight="60">
+
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <!--<TextCell Text="{Binding Title}" Height="200" Detail="{Binding Detail}" DetailColor="Black" TextColor="Red"  />-->
+
+                                <ViewCell>
+                                    <StackLayout BackgroundColor="White"
+								Padding="0,5,0,5"
+								 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                        <StackLayout BackgroundColor="Transparent"
+									 HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"
+									 Spacing="0"
+									 Margin="20,0,20,0">
+                                            <Label Text="{Binding Name}" TextColor="{Binding TextColor}" FontSize="14" VerticalOptions="CenterAndExpand" />
+
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+
+                </Grid>
+
+
+                <Grid Grid.Column="1" Grid.Row="0" BackgroundColor="#f5f8fa">
+
+                    <ListView x:Name="lstView2" ItemTapped="lstView2_ItemTapped" IsVisible="True" ItemsSource="{Binding GenderItems}" SeparatorColor="Black" Margin="0,0,0,0" RowHeight="50">
+
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <!--<TextCell Text="{Binding Title}" Height="200" Detail="{Binding Detail}" DetailColor="Black" TextColor="Red"  />-->
+
+                                <ViewCell>
+                                    <StackLayout BackgroundColor="#f5f8fa"
+								Padding="0,5,0,5"
+								 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                        <StackLayout BackgroundColor="Transparent"
+									 HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"
+									 Spacing="0"
+									 Margin="20,0,20,0">
+
+
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="8*"></ColumnDefinition>
+                                                    <ColumnDefinition Width="80*"></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+                                                <Image Source="{Binding img}" Grid.Column="0"></Image>
+                                                <Label Text="{Binding GenderName}" Grid.Column="1" TextColor="{Binding TextColor}" FontSize="14" VerticalOptions="CenterAndExpand" />
+
+                                            </Grid>
+
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                    <ListView x:Name="lstView3" ItemTapped="lstView3_ItemTapped" IsVisible="False" ItemsSource="{Binding SizeItems}" SeparatorColor="Black" Margin="0,0,0,0" RowHeight="50">
+
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <!--<TextCell Text="{Binding Title}" Height="200" Detail="{Binding Detail}" DetailColor="Black" TextColor="Red"  />-->
+
+                                <ViewCell>
+                                    <StackLayout BackgroundColor="#f5f8fa"
+								Padding="0,5,0,5"
+								 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                        <StackLayout BackgroundColor="Transparent"
+									 HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"
+									 Spacing="0"
+									 Margin="20,0,20,0">
+
+
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                                                    <ColumnDefinition Width="95*"></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+                                                <Image Source="{Binding img}" Grid.Column="0"></Image>
+                                                <Label Text="{Binding SizeName}" Grid.Column="1" TextColor="{Binding TextColor}" FontSize="14" VerticalOptions="CenterAndExpand" />
+
+                                            </Grid>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                    <ListView x:Name="lstView4" ItemTapped="lstView4_ItemTapped" IsVisible="False" ItemsSource="{Binding StyleItems}" SeparatorColor="Black" Margin="0,0,0,0" RowHeight="50">
+
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <!--<TextCell Text="{Binding Title}" Height="200" Detail="{Binding Detail}" DetailColor="Black" TextColor="Red"  />-->
+
+                                <ViewCell>
+                                    <StackLayout BackgroundColor="#f5f8fa"
+								Padding="0,5,0,5"
+								 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                        <StackLayout BackgroundColor="Transparent"
+									 HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"
+									 Spacing="0"
+									 Margin="20,0,20,0">
+
+
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                                                    <ColumnDefinition Width="95*"></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+                                                <Image Source="{Binding img}" Grid.Column="0"></Image>
+                                                <Label Text="{Binding StyleName}" Grid.Column="1" TextColor="{Binding TextColor}" FontSize="14" VerticalOptions="CenterAndExpand" />
+
+                                            </Grid>
+
+
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                </Grid>
+
+                <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" VerticalOptions="End" BackgroundColor="#f24245" HorizontalOptions="FillAndExpand">
+                    <StackLayout>
+                        <!--<Button Clicked="Button_Clicked" TextColor="White" FontSize="16" BackgroundColor="#f24245">
+                <Button.Text>
+                   Look Up
+     Send your query to retailers
+                </Button.Text>
+            </Button>-->
+                        <Label FontSize="Large" VerticalTextAlignment="Center" HeightRequest="50" TextColor="White" HorizontalOptions="Center">
+
+                            <Label.Text>
+                                Apply
+                            </Label.Text>
+                        </Label>
+                      
+                    </StackLayout>
+                </Grid>
+
+            </Grid>
+
+        </StackLayout>
+    </ScrollView>
+   
+</ContentPage>

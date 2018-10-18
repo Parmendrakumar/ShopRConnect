@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RetailerApp.View.AboutUs" Title="About Us" BackgroundColor="White">
+    <ContentPage.Content>
+        <ScrollView>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="12*"/>
+                </Grid.RowDefinitions>
+
+                <StackLayout Orientation="Vertical" Grid.Row="0" Padding="20,30,20,10">
+                    <!--<Button Text="Signup with Facebook" Image="facebook.png" HeightRequest="50" TextColor="White" BackgroundColor="#4460a0"></Button>
+                <Button Text="Signup with Google" Image="google_plus.png" HeightRequest="50" TextColor="White" BackgroundColor="#ed4958"></Button>
+                <BoxView></BoxView>-->
+
+                    <Image Source="icon.png" HeightRequest="100" WidthRequest="100" HorizontalOptions="Center"></Image>
+                   
+                    <BoxView></BoxView>
+                    <Label Text="Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum"
+                           TextColor="#16325c" FontSize="Small" ></Label>
+                    <ActivityIndicator x:Name="Alogin" Color="Red" IsRunning="False"></ActivityIndicator>
+                </StackLayout>
+              
+
+            </Grid>
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

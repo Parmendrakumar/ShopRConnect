@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RetailerApp.View.SelectCategory"
+             Title="Select Category">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" >
+            <StackLayout BackgroundColor="#17a39d">
+                <SearchBar x:Name="ColorSearchBar" Placeholder="Search category" Margin="10,10,10,10" BackgroundColor="White" TextChanged="ColorSearchBar_TextChanged" >
+
+                </SearchBar>
+            </StackLayout>
+
+
+            <ListView x:Name="suggestionlistview" ItemTapped="suggestionlistview_ItemTapped" ItemsSource="{Binding categ}" SeparatorColor="Black" Margin="0,0,0,0" RowHeight="60">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <!--<TextCell Text="{Binding Title}" Height="200" Detail="{Binding Detail}" DetailColor="Black" TextColor="Red"  />-->
+
+                        <ViewCell>
+                            <StackLayout BackgroundColor="White"
+								Padding="0,5,0,5"
+								 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <StackLayout BackgroundColor="Transparent"
+									 HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"
+									 Spacing="0"
+									 Margin="20,0,20,0">
+                                    <Label Text="{Binding Name}" TextColor="{Binding TextColor}" FontSize="16" VerticalOptions="CenterAndExpand" />
+
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RetailerApp.View.Offer_Brand"
+             Title="Offer">
+    <StackLayout x:Name="offer">
+
+        <ScrollView>
+            <Grid RowSpacing="-10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="37*" />
+                    <RowDefinition Height="63*" />
+
+
+                </Grid.RowDefinitions>
+
+
+
+                <StackLayout Grid.Row="0">
+
+                    <Image Source="offerbrand1.png"  Aspect="Fill"/>
+                </StackLayout>
+
+                <StackLayout Grid.Row="1" Padding="20,0,20,20">
+                   
+                    <Label Text="5% Instant Discount on using Axis credit card" TextColor="#1dafaa" FontSize="16"></Label>
+                    <Label Text=""></Label>
+                    <Label Text="What is offer duration?" TextColor="#16325c" FontSize="16"></Label>
+                    <Label Text="* 1st June, 2018(00:00 Hours) to 30th June 2018(23:59 Hours)" FontSize="14" TextColor="Gray"></Label>
+                    <Label Text=""></Label>
+                    <Label Text="What other conditions should apply to avail the offer?" TextColor="#1dafaa" FontSize="16"></Label>
+                    <Label Text="* There is no minimum cart amount to avail this offer." FontSize="14" TextColor="Gray"></Label>
+                    <Label Text="* Maximum discount that can be availed during the offer Period per card is Rs. 200" FontSize="14" TextColor="Gray"></Label>
+                    <Label Text="* Offer is also applicable on payments made through EMI on Axis Bank Buzz Credit Cards" FontSize="14" TextColor="Gray"></Label>
+
+                </StackLayout>
+
+
+
+            </Grid>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>

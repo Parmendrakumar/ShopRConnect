@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RetailerApp.View.SelectFacilities" BackgroundColor="White"
+             Title="Select Facilities">
+
+    
+
+        <StackLayout BackgroundColor="White">
+
+            <ListView x:Name="lstView" ItemTapped="lstView_ItemSelected" ItemsSource="{Binding Items}" SeparatorColor="Black" Margin="0,0,0,0" RowHeight="50">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <!--<TextCell Text="{Binding Title}" Height="200" Detail="{Binding Detail}" DetailColor="Black" TextColor="Red"  />-->
+
+                        <ViewCell>
+                            <StackLayout BackgroundColor="White"
+								Padding="0,5,0,5"
+								 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <StackLayout BackgroundColor="Transparent"
+									 HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"
+									 Spacing="0"
+									 Margin="20,0,20,0">
+                                  
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="4*"></ColumnDefinition>
+                                            <ColumnDefinition Width="84*"></ColumnDefinition>
+                                            <ColumnDefinition Width="12*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Image Source="{Binding img}" Grid.Column="0"></Image>
+                                        <Label Text="{Binding Name}" Grid.Column="1" FontSize="Medium" TextColor="{Binding TextColor}" VerticalOptions="CenterAndExpand" />
+                                        <Image Source="{Binding img2}" HeightRequest="22" WidthRequest="22" Grid.Column="2"></Image>
+                                    </Grid>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+        </StackLayout>
+
+      
+   
+</ContentPage>

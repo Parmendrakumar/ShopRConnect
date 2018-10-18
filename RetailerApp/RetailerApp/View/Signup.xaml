@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RetailerApp.View.Signup" BackgroundColor="#17a39d"
+             xmlns:local="clr-namespace:RetailerApp.Behavior"            
+             NavigationPage.HasNavigationBar="True"
+              x:Name="Page" 
+             xmlns:ci="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             Title="Signup">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Login" Order="Primary" Priority="1" Clicked="ToolLogin_Clicked">
+
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <AbsoluteLayout>
+        
+            <Grid AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+          
+
+            <ScrollView>
+            <StackLayout Orientation="Vertical" Grid.Row="0" VerticalOptions="Fill" Margin="0,10,0,0" Padding="17" Spacing="2">
+               
+                <!--<Button Text="Signup with Facebook" Image="facebook.png" HeightRequest="50" TextColor="White" BackgroundColor="#4460a0"></Button>
+                <Button Text="Signup with Google" Image="google_plus.png" HeightRequest="50" TextColor="White" BackgroundColor="#ed4958"></Button>
+                <BoxView></BoxView>-->
+
+                    <!--<Label Text="Mobile Number" FontSize="14" TextColor="White"></Label>-->
+                    <Entry x:Name="storename" Keyboard="Chat"  Placeholder="Store Name" FontSize="18" BackgroundColor="Transparent" PlaceholderColor="White" TextColor="White">
+                        <Entry.Behaviors>
+                            <local:EntryLengthValidatorBehavior MaxLength="15"></local:EntryLengthValidatorBehavior>
+                        </Entry.Behaviors>
+                    </Entry>
+                    <Entry x:Name="storeaddress" Keyboard="Chat" Placeholder="Address 1" BackgroundColor="Transparent" PlaceholderColor="White" TextColor="White">
+                        <!--<Entry.Behaviors>
+                            <local:EntryLengthValidatorBehavior MaxLength="50"></local:EntryLengthValidatorBehavior>
+                        </Entry.Behaviors>-->
+                    </Entry>
+                    <Entry x:Name="storeaddress2" Keyboard="Chat" Placeholder="Address 2" BackgroundColor="Transparent" PlaceholderColor="White" TextColor="White">
+                        <Entry.Behaviors>
+                            <local:EntryLengthValidatorBehavior MaxLength="50"></local:EntryLengthValidatorBehavior>
+                        </Entry.Behaviors>
+                    </Entry>
+                    <Entry x:Name="storearea" Keyboard="Chat"  Placeholder="Main Area (Location)" FontSize="18" BackgroundColor="Transparent" PlaceholderColor="White" TextColor="White">
+                        <Entry.Behaviors>
+                            <local:EntryLengthValidatorBehavior MaxLength="50"></local:EntryLengthValidatorBehavior>
+                        </Entry.Behaviors>
+                    </Entry>
+                    <!--<Entry x:Name="storestate" TextChanged="storestate_TextChanged" Keyboard="Chat" Placeholder="State" BackgroundColor="Transparent" PlaceholderColor="White" TextColor="White"></Entry>-->
+                    <!--<Label Text="Select State"></Label>-->
+                    <Picker x:Name="storestate" TextColor="White"  SelectedIndexChanged="storestate_SelectedIndexChanged">
+                        <Picker.Items>
+                            <x:String>State</x:String>
+                        </Picker.Items>
+                        <Picker.SelectedIndex>0</Picker.SelectedIndex>
+                    </Picker>
+                    <!--<Entry x:Name="storecity" TextChanged="Entry_CityTextChanged" Keyboard="Chat" Placeholder="City" BackgroundColor="Transparent" PlaceholderColor="White" TextColor="White"></Entry>-->
+                    <!--<Label Text="Select City"></Label>-->
+
+                    <Grid>
+                        <Picker x:Name="storecity" TextColor="White" SelectedIndexChanged="storecity_SelectedIndexChanged" >
+                            <Picker.Items>
+                                <x:String>City</x:String>
+                            </Picker.Items>
+                            <Picker.SelectedIndex>0</Picker.SelectedIndex>
+                        </Picker>
+                        <ActivityIndicator x:Name="CityIndicator" Color="Red" IsEnabled="False" IsRunning="False" IsVisible="False" ></ActivityIndicator>
+                    </Grid>
+                    <Entry x:Name="othercity" TextColor="White" PlaceholderColor="White" Placeholder="City" BackgroundColor="Transparent" IsVisible="False"></Entry>
+                    <Entry x:Name="storezip" TextChanged="storezip_TextChanged" Placeholder="Pin Code" Keyboard="Numeric" BackgroundColor="Transparent" PlaceholderColor="White" TextColor="White"></Entry>
+                    <Entry x:Name="businesscategory" Keyboard="Chat" Focused="businesscategory_Focused" Placeholder="Business Category" BackgroundColor="Transparent" PlaceholderColor="White" TextColor="White"></Entry>
+                    <Entry x:Name="subcategory" Keyboard="Chat" Placeholder="Sub Category" BackgroundColor="Transparent" PlaceholderColor="White" TextColor="White"></Entry>
+                    <Entry x:Name="storephone"  TextChanged="Entry_TextChangedPhone" Placeholder="Phone Number" Keyboard="Numeric" BackgroundColor="Transparent" PlaceholderColor="White" TextColor="White"></Entry>
+
+                    <Entry x:Name="mobilenumber" FontSize="18"  Placeholder="Mobile Number" TextChanged="Entry_TextChanged" Keyboard="Numeric" BackgroundColor="Transparent" PlaceholderColor="White" TextColor="White">
+                        <Entry.Behaviors>
+                            <local:MobileNumberValidation/>
+                        </Entry.Behaviors>
+                    </Entry>
+
+                    <!--<Label Text="Name" FontSize="14" TextColor="White"></Label>-->
+                    <Entry x:Name="storeemail" Keyboard="Email" Placeholder="Email Id" FontSize="18" BackgroundColor="Transparent" PlaceholderColor="White" TextColor="White">
+                        <Entry.Behaviors>
+                            <local:EmailValidatorBehavior/>
+                        </Entry.Behaviors>
+                    </Entry>
+
+
+                    <!--<Picker BackgroundColor="Transparent" TextColor="White">
+                <Picker.Items>
+                    <x:String>India</x:String>
+                    <x:String>China</x:String>
+                    <x:String>USA</x:String>
+                    <x:String>Pakistan</x:String>
+                    <x:String>Dubai</x:String>
+                </Picker.Items>
+                <Picker.SelectedIndex>0</Picker.SelectedIndex>
+            </Picker>-->
+                    <Entry x:Name="storewebsite" Keyboard="Url" Placeholder="Website URL" FontSize="18" BackgroundColor="Transparent" PlaceholderColor="White" TextColor="White">
+                        <Entry.Behaviors>
+                            <local:EntryLengthValidatorBehavior MaxLength="35"></local:EntryLengthValidatorBehavior>
+                        </Entry.Behaviors>
+                    </Entry>
+                  
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Opening Time" FontSize="18" VerticalOptions="Center" TextColor="White" HorizontalOptions="StartAndExpand"/>
+                        <TimePicker x:Name="openingTime"  WidthRequest="140" TextColor="White" VerticalOptions="Center"  HorizontalOptions="CenterAndExpand"/>
+                       
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Closing Time" FontSize="18"  TextColor="White" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+                        <TimePicker x:Name="closingTime" WidthRequest="140" TextColor="White" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+                           
+                        </TimePicker>
+                    </StackLayout>
+
+
+                    <!--<Entry x:Name="verificationcode" Placeholder="Verification Code" FontSize="18" BackgroundColor="Transparent" PlaceholderColor="White" TextColor="White"></Entry>-->
+                    <BoxView></BoxView>
+                    <Label Text="Add Profile Images" FontSize="20" FontAttributes="Bold" TextColor="White" ></Label>
+
+                    <ci:CircleImage x:Name="profileimage"
+            HorizontalOptions="CenterAndExpand"
+            HeightRequest="120"   
+            WidthRequest="120"  
+            BorderThickness = "3"
+            Source="profile.png"   
+            Aspect="AspectFill">
+                        <ci:CircleImage.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="AddProfile_Clicked"></TapGestureRecognizer>
+                        </ci:CircleImage.GestureRecognizers>
+                    </ci:CircleImage>
+                    <Button Text="Add Profile Image" Clicked="AddProfile_Clicked" CornerRadius="14" Margin="0,0,0,-10" Font="12" HeightRequest="35" BackgroundColor="White" TextColor="Red" HorizontalOptions="Center" VerticalOptions="End"></Button>
+                    <BoxView></BoxView>
+                    <Label Text="Add Logo Image" FontSize="20" FontAttributes="Bold" TextColor="White" ></Label>
+                    <Image x:Name="logo" HorizontalOptions="CenterAndExpand"
+            HeightRequest="150"   
+            WidthRequest="150"          
+         Source="imagessymbol.png"
+            Aspect="AspectFill">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="AddLogo_Clicked"></TapGestureRecognizer>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Button Text="Add Logo" Clicked="AddLogo_Clicked" CornerRadius="14" Margin="0,0,0,-10" Font="12" HeightRequest="35" BackgroundColor="White" TextColor="Red" HorizontalOptions="Center" VerticalOptions="End"></Button>
+
+                    <!--<Image x:Name="storephoto" HorizontalOptions="CenterAndExpand"
+             HeightRequest="150"   
+            WidthRequest="220"     
+            Source="imagessymbol.png"
+            Aspect="AspectFill"></Image>
+                <Button Text="Add StorePhoto" Clicked="AddPhoto_Clicked" CornerRadius="14" Margin="0,0,0,-10" Font="12" HeightRequest="35" BackgroundColor="White" TextColor="Red" HorizontalOptions="Center" VerticalOptions="End"></Button>-->
+                    <ActivityIndicator x:Name="Alogin" Color="Red" IsRunning="False"></ActivityIndicator>
+                    <Label Text="Add Store Images" FontSize="20" FontAttributes="Bold" TextColor="White" ></Label>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="75*"></RowDefinition>
+                            <RowDefinition Height="25*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                       
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="33*"/>
+                            <ColumnDefinition Width="33*"/>
+                            <ColumnDefinition Width="33*"/>
+                        </Grid.ColumnDefinitions>
+                    
+
+                    <Image x:Name="storephoto" Grid.Column="0" Grid.Row="0" HeightRequest="100"
+            Source="imagessymbol.png" Aspect="AspectFill">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="AddPhoto_Clicked"></TapGestureRecognizer>
+                        </Image.GestureRecognizers>
+                    </Image>
+                        <Image x:Name="storephoto2" Grid.Column="1" Grid.Row="0"  HeightRequest="100"
+            Source="imagessymbol.png" Aspect="AspectFill">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="AddPhoto_Clicked2"></TapGestureRecognizer>
+                        </Image.GestureRecognizers>
+                    </Image>
+                        <Image x:Name="storephoto3" Grid.Column="2" Grid.Row="0" HeightRequest="100"
+            Source="imagessymbol.png" Aspect="AspectFill">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="AddPhoto_Clicked3"></TapGestureRecognizer>
+                        </Image.GestureRecognizers>
+                    </Image>
+                        <Button Clicked="AddPhoto_Clicked" Text="Store Image" Grid.Column="0" Grid.Row="1" HeightRequest="35"  CornerRadius="14"  Font="12"  BackgroundColor="White" TextColor="Red"></Button>
+                        <Button Clicked="AddPhoto_Clicked2" Text="Store Image" Grid.Column="1" Grid.Row="1" HeightRequest="35" CornerRadius="14"  Font="12"   BackgroundColor="White" TextColor="Red"></Button>
+                        <Button Clicked="AddPhoto_Clicked3" Text="Store Image" Grid.Column="2" Grid.Row="1" HeightRequest="35" CornerRadius="14" Font="12"  BackgroundColor="White" TextColor="Red"></Button>
+
+                    </Grid>
+
+                  
+             
+            </StackLayout>
+            </ScrollView>
+
+
+            <StackLayout Grid.Row="1" HeightRequest="50" Grid.Column="0" VerticalOptions="End" Orientation="Horizontal" BackgroundColor="#f24245">
+                <!--<StackLayout x:Name="ButtonStackLayout" Orientation="Horizontal" Spacing="10"  BackgroundColor="#f24245">-->
+
+                <Label x:Name="ButtonLabel" FontSize="Medium" Text="Create Account" TextColor="White" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="CreateAccount" />
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="CreateAccount"
+               NumberOfTapsRequired="1"/>
+                </StackLayout.GestureRecognizers>
+
+            </StackLayout>
+
+        </Grid>
+        
+        <BoxView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" BackgroundColor="LightGray" Opacity="0.7" InputTransparent="False" IsVisible="{Binding Path=IsBusy, Source={x:Reference Page}}" />
+        <ActivityIndicator IsRunning="{Binding Path=IsBusy, Source={x:Reference Page}}" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds=".5,.5,-1,-1" />
+
+    </AbsoluteLayout>
+
+</ContentPage>

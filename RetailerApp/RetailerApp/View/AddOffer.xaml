@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RetailerApp.View.AddOffer" BackgroundColor="#f5f8fa"
+             xmlns:controls="clr-namespace:XamForms.Controls;assembly=XamForms.Controls.Calendar"           
+             Title="Add Offer">
+
+    <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="88*"/>
+                <RowDefinition Height="12*"/>
+            </Grid.RowDefinitions> 
+        <StackLayout Grid.Row="0" BackgroundColor="White" HorizontalOptions="FillAndExpand" Padding="25,25,25,25">
+                <Label Text="Offers" FontSize="14" TextColor="Black"></Label>
+            <Entry x:Name="offer" Placeholder="Offers" WidthRequest="303" TextColor="#16325c" FontSize="14"              
+                HorizontalOptions="CenterAndExpand" />
+                <Label Text="Terms and Conditions" FontSize="14" TextColor="Black"></Label>
+            <Entry x:Name="tnc" Placeholder="Offer TnC" WidthRequest="303" TextColor="#16325c" FontSize="14"  HorizontalOptions="CenterAndExpand" />
+                <Label Text="Offer Start Date" FontSize="14" TextColor="Black"></Label>
+
+                <DatePicker x:Name="tooffer" HorizontalOptions="CenterAndExpand" TextColor="#16325c" WidthRequest="303"></DatePicker>
+
+                <Label Text="Offer End Date" FontSize="14" TextColor="Black"></Label>
+
+                <DatePicker x:Name="fromoffer" HorizontalOptions="CenterAndExpand" TextColor="#16325c" WidthRequest="303"></DatePicker>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+            <!--<Image Source="photouploadimg.png" HorizontalOptions="Start" >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GetImage_Tapped1"></TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+            </Image>-->
+                    <Button Text="Upload Image" HorizontalOptions="CenterAndExpand" CornerRadius="20" BackgroundColor="#17a39d" TextColor="White" Clicked="GetImage_Tapped1"></Button>
+                    <!--<Button Text="Edit Offer" HorizontalOptions="EndAndExpand" CornerRadius="20" BackgroundColor="#17a39d" TextColor="White" Clicked="Button_Clicked"></Button>-->
+                   
+                </StackLayout>
+                <!--<Button Text="Add Offer" HorizontalOptions="FillAndExpand" CornerRadius="20" BackgroundColor="#17a39d" TextColor="White"></Button>-->
+            </StackLayout>
+        <StackLayout Grid.Row="1" VerticalOptions="End">
+                <StackLayout x:Name="ButtonStackLayout" Orientation="Horizontal" Spacing="10" Padding="10,10,10,10" BackgroundColor="#f24245">
+                    <StackLayout HorizontalOptions="StartAndExpand"></StackLayout>
+                    <Label x:Name="ButtonLabel" FontSize="Medium" Text="Preview" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="PreviewOfferpopup" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <StackLayout HorizontalOptions="EndAndExpand"></StackLayout>
+                </StackLayout>
+            </StackLayout>
+
+        </Grid>
+    </ScrollView>
+</ContentPage>

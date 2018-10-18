@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             x:Class="RetailerApp.View.Popup_RequestRating">
+    <pages:PopupPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="EntryStyle" TargetType="Entry">
+                <Setter Property="PlaceholderColor" Value="#9cdaf1"/>
+                <Setter Property="TextColor" Value="#7dbbe6"/>
+
+            </Style>
+        </ResourceDictionary>
+    </pages:PopupPage.Resources>
+    <!--<pages:PopupPage.Animation>
+        <animations:ScaleAnimation
+      PositionIn="Bottom"
+      PositionOut="Center"
+      ScaleIn="1"
+      ScaleOut="0.7"
+      DurationIn="700"
+      EasingIn="BounceOut"/>
+    </pages:PopupPage.Animation>-->
+    <ScrollView
+    HorizontalOptions="Center"
+    VerticalOptions="Center">
+        <AbsoluteLayout>
+            <Frame
+        x:Name="FrameContainer"
+        Margin="15"
+        HorizontalOptions="Center"
+        BackgroundColor="White">
+             
+                
+                <StackLayout>
+                    <Image Source="ratingr.png" HorizontalOptions="Center" x:Name="OctocatImage" Margin="10" HeightRequest="40" WidthRequest="40">
+                    </Image>
+
+                    <StackLayout Margin="10">
+
+                        <Label Text="Request Rating Update?" TextColor="#16325c" FontAttributes="Bold" FontSize="20" HorizontalOptions="Center" VerticalOptions="Start" />
+                      
+                        <Label Text="Do you want to request"  TextColor="#16325c" FontSize="16" HorizontalOptions="Center" VerticalOptions="Start" />
+                        <Label Text="to update your rating"  TextColor="#16325c" FontSize="16" HorizontalOptions="Center" VerticalOptions="Start" />
+                        <!--<Label Text="rating?"  TextColor="#16325c" FontSize="16" HorizontalOptions="Center" VerticalOptions="Start" />-->
+                       
+                        <Label Text=""></Label>
+                        <StackLayout>
+                            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50.00*" />
+                                    <ColumnDefinition Width="50.00*" />
+                                </Grid.ColumnDefinitions>
+                              <!--<Label Grid.Column="0" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HeightRequest="50" TextColor="Black" Text="No"  FontSize="Large" BackgroundColor="White">
+                                <Label.GestureRecognizers>
+                                  <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                                </Label.GestureRecognizers>
+                              </Label>
+                              <Label Grid.Column="1" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HeightRequest="50" Text="Yes" TextColor="White"  FontSize="Large"  BackgroundColor="#f24245">
+                                <Label.GestureRecognizers>
+                                  <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"  />
+                                </Label.GestureRecognizers>
+                              </Label>-->
+                              <Button x:Name="btnno" Text="No" Clicked="TapGestureRecognizer_Tapped"  Grid.Column="0" HorizontalOptions="FillAndExpand"   HeightRequest="50" TextColor="White" FontSize="Large" BackgroundColor="Red" />
+                              <Button x:Name="btnyes" Text="Yes" Clicked="TapGestureRecognizer_Tapped1"  Grid.Column="1" HorizontalOptions="FillAndExpand"  HeightRequest="50" TextColor="White"  FontSize="Large"  BackgroundColor="Red"/>
+
+                            </Grid>
+                        </StackLayout>
+
+
+                    </StackLayout>
+
+                </StackLayout>
+            </Frame>
+
+        </AbsoluteLayout>
+    </ScrollView>
+</pages:PopupPage>

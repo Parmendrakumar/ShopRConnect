@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:badge="clr-namespace:BadgeView.Shared;assembly=BadgeView.Shared"
+             x:Class="RetailerApp.View.Home"
+              xmlns:ci="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions">
+    <StackLayout>
+        <StackLayout BackgroundColor="#17a39d">
+
+            <Label Text="Your Location" FontSize="12" IsVisible="False" Margin="23,10,0,0" TextColor="White"></Label>
+
+            <StackLayout Orientation="Horizontal"  Padding="23,15,10,0">
+                
+                <Label Text="Saket" FontSize="18" IsVisible="False" TextColor="White">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Location_Tapped"></TapGestureRecognizer>
+                    </Label.GestureRecognizers>
+
+                </Label>               
+
+                <Image Source="DDLImage.png" IsVisible="False" VerticalOptions="Center">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Location_Tapped"></TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Grid HorizontalOptions="EndAndExpand">
+                    <Image Source="notification.png" HeightRequest="25" WidthRequest="25" HorizontalOptions="Center" VerticalOptions="Center" >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="NotificationClick" NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <!--<badge:BadgeView Text="2" BadgeColor="Red" VerticalOptions="Start" HorizontalOptions="End" />-->
+                    <!--<Image Source="two.png" HeightRequest="10" WidthRequest="10">
+                    </Image>-->
+
+                </Grid>
+                <Label Text="" HorizontalOptions="End"></Label>
+                <!--<Image Source="profile.png" HorizontalOptions="End" HeightRequest="35" WidthRequest="35">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ProfileClick"  NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>-->
+                <ci:CircleImage x:Name="profileimage2" HorizontalOptions="End" HeightRequest="40" WidthRequest="40"          
+                  Aspect="AspectFill">
+                    <ci:CircleImage.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ProfileClick"  NumberOfTapsRequired="1" />
+                    </ci:CircleImage.GestureRecognizers>
+                </ci:CircleImage>
+            </StackLayout>
+
+            <ActivityIndicator x:Name="act" IsVisible="False" IsRunning="False" Color="Red"></ActivityIndicator>
+         
+            <!--<StackLayout Orientation="Horizontal" Padding="10,0,20,0">
+                <Label x:Name="ColorSearchBar" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" Text="Customers are looking up" TextColor="White" FontSize="24" >
+
+                </Label>
+
+            </StackLayout>-->
+
+            <StackLayout Orientation="Horizontal" BackgroundColor="#17a39d" Padding="0,10,0,0">
+               <!--<Button x:Name="Active1" BorderWidth="1"  Text="ACTIVE" HeightRequest="50" WidthRequest="180" TextColor="Red" HorizontalOptions="CenterAndExpand" FontSize="12" BackgroundColor="#17a39d"></Button>
+                <Button x:Name="Inactive1" Text="INACTIVE" HeightRequest="50" WidthRequest="180" TextColor="White" HorizontalOptions="CenterAndExpand" FontSize="12" BackgroundColor="#17a39d"></Button>-->
+                <Grid RowSpacing="-5" ColumnSpacing="-5"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="20" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50*"/>
+                        <ColumnDefinition Width="50*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalTextAlignment="Center" FontAttributes="Bold" Text="Customers are looking up" TextColor="White" FontSize="24" />
+
+
+                    <Label Grid.Row="1" Grid.Column="0" Text="Active" VerticalTextAlignment="End" HorizontalTextAlignment="Center" TextColor="White" FontSize="18" BackgroundColor="#17a39d">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                    <Label Grid.Row="1" Grid.Column="1" Text="InActive" VerticalTextAlignment="End" HorizontalTextAlignment="Center" TextColor="White" FontSize="18" BackgroundColor="#17a39d">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <BoxView x:Name="box1" VerticalOptions="End" Grid.Row="2" Grid.Column="0" HorizontalOptions="FillAndExpand"
+           HeightRequest="2"         
+           Color="#ffffff" ></BoxView>
+                    <BoxView x:Name="box2" VerticalOptions="End" Grid.Row="2" Grid.Column="1" HorizontalOptions="FillAndExpand"
+           HeightRequest="2"
+          
+           Color="#011c1a"></BoxView>
+
+                </Grid>
+
+
+            </StackLayout>
+         
+           
+        </StackLayout>
+
+        <!-- <ListView x:Name="suggestionlistview" ItemTapped="suggestionlistview_ItemTapped"></ListView>-->
+        <!-- ItemTapped="activelistview_ItemTapped"-->
+        <!-- ItemSelected="activelistview_ItemSelected" -->
+        <StackLayout VerticalOptions="FillAndExpand" BackgroundColor="#17a39d">
+
+            <ListView x:Name="activelistview" IsPullToRefreshEnabled="True" ItemTapped="activelistview_ItemTapped"  HasUnevenRows="True" IsVisible="True" ItemsSource="{Binding active}" SeparatorColor="Black" Margin="0,0,0,0">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                       
+                        <ViewCell>
+                            <StackLayout BackgroundColor="White"
+								Padding="0,5,0,5"
+								 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <StackLayout BackgroundColor="Transparent"
+									 HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"
+									 Spacing="0"
+									 Margin="20,0,20,0">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="78*"></ColumnDefinition>
+                                            <ColumnDefinition Width="22*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                            
+                                        </Grid.RowDefinitions>
+                                        <Label Text="{Binding Dt}" Grid.Column="0" Grid.Row="0" TextColor="Gray" FontSize="12" VerticalOptions="CenterAndExpand" />
+                                        <Label Text="{Binding Name}" Grid.Column="0" Grid.Row="1" TextColor="#16325c" FontSize="14" VerticalOptions="CenterAndExpand" />
+                                       
+                                        <Label Text="{Binding CustomerName}" TextColor="Red" Grid.Row="0" FontSize="12" HorizontalOptions="Center" Grid.Column="1"></Label>
+                                            <StackLayout Grid.Row="1" Grid.Column="1">
+                                            <badge:BadgeView x:Name="bag" Text="{Binding unread}" HorizontalOptions="Center" BadgeColor="{Binding bcolor}" />                                          
+                                        </StackLayout>
+
+                                    </Grid>
+
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+         
+            </ListView>
+            <ListView x:Name="inactivelistview" HasUnevenRows="True" IsVisible="False"  ItemsSource="{Binding inactive}" SeparatorColor="Black" Margin="0,0,0,0">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <!--<TextCell Text="{Binding Title}" Height="200" Detail="{Binding Detail}" DetailColor="Black" TextColor="Red"  />-->
+                        <ViewCell>
+                            <StackLayout BackgroundColor="White"
+								Padding="0,5,0,5"
+								 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <StackLayout BackgroundColor="Transparent"
+									 HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"
+									 Spacing="0"
+									 Margin="20,0,20,0">
+
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="78*"></ColumnDefinition>
+                                            <ColumnDefinition Width="22*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Label Text="{Binding Dt2}" Grid.Column="0" Grid.Row="0" TextColor="Gray" FontSize="12" VerticalOptions="CenterAndExpand" />
+
+                                        <Label Text="{Binding Name2}" Grid.Column="0" Grid.Row="1" TextColor="#16325c" FontSize="14" VerticalOptions="CenterAndExpand" />
+                                        <Label Text="{Binding CustomerName}" TextColor="Gray" Grid.Row="0" FontSize="12" Grid.Column="1"></Label>
+                                    </Grid>
+
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+       
+    </StackLayout>
+</ContentPage>

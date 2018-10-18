@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:RetailerApp"
+             x:Class="RetailerApp.MainPage"
+             xmlns:View="clr-namespace:RetailerApp.View;assembly=RetailerApp"
+            
+            NavigationPage.HasNavigationBar="False">
+
+    <View:Home Icon="Home" Title="Home"  />
+    <View:Offer Icon="Offers" Title="Offers"/>   
+    <!--<View:Malls Icon="Malls" Title="Malls" />-->
+    <View:MyStore Icon="MyStore" Title="My Store" />
+  
+    
+</TabbedPage>
+    
+   

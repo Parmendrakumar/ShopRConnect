@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              Title="Select Location"
+             x:Class="RetailerApp.View.SelectLocation">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Detect" />
+
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" >
+            <StackLayout BackgroundColor="#17a39d">
+                <SearchBar x:Name="ColorSearchBar" TextColor="#16325c" Placeholder="Search location" Margin="10,10,10,10" BackgroundColor="White" TextChanged="ColorSearchBar_TextChanged" >
+
+                </SearchBar>
+               
+               
+                <StackLayout VerticalOptions="Center">
+                    <Label x:Name="lblText" Text="0" HorizontalOptions="Start" FontSize="Medium" HorizontalTextAlignment="Center" VerticalOptions="EndAndExpand" >
+                        <Label.Margin>
+                            <OnPlatform x:TypeArguments="Thickness">
+                                <On Platform="iOS" Value="15,0" />
+                                <On Platform="Android" Value="10,0" />
+                            </OnPlatform>
+                        </Label.Margin>
+                    </Label>
+                    <Slider x:Name="mySlider" Maximum="50" Minimum="0" HorizontalOptions="FillAndExpand" ValueChanged="Slider_ValueChanged" >
+                        <Slider.Margin>
+                            <OnPlatform x:TypeArguments="Thickness">
+                                <On Platform="iOS" Value="10,0" />
+                            </OnPlatform>
+                        </Slider.Margin>
+                    </Slider>
+                </StackLayout>
+                   
+            </StackLayout>
+            <Label Text="Popular locations" Margin="20,0,20,0" TextColor="#16325c"></Label>
+            <!-- <ListView x:Name="suggestionlistview" ItemTapped="suggestionlistview_ItemTapped"></ListView>-->
+            <ListView x:Name="suggestionlistview" ItemTapped="suggestionlistview_ItemTapped" ItemsSource="{Binding location}" SeparatorColor="Black" Margin="0,0,0,0" RowHeight="60">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <!--<TextCell Text="{Binding Title}" Height="200" Detail="{Binding Detail}" DetailColor="Black" TextColor="Red"  />-->
+
+                        <ViewCell>
+                            <StackLayout BackgroundColor="White"
+								Padding="0,5,0,5"
+								 HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <StackLayout BackgroundColor="Transparent"
+									 HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"
+									 Spacing="0"
+									 Margin="20,0,20,0">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="5*"></ColumnDefinition>
+                                            <ColumnDefinition Width="95*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Image Source="{Binding img}" Grid.Column="0"></Image>
+                                        <Label Text="{Binding Name}" Grid.Column="1" TextColor="{Binding TextColor}" FontSize="16" VerticalOptions="CenterAndExpand" />
+
+                                    </Grid>
+
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

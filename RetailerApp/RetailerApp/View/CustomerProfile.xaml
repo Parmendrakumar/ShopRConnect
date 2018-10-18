@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RetailerApp.View.CustomerProfile"
+             Title="Customer Profile" BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="20,20,20,20">
+                    <Image Source="user.png" HorizontalOptions="CenterAndExpand" Aspect="AspectFit"></Image>
+               
+            </StackLayout>
+        <StackLayout Padding="25,20,25,20" Spacing="-2">
+                <Label Text=""></Label>
+                <Label Text="Name"></Label>
+            <Entry Text="Prashant Gupta" TextColor="#16325c"></Entry>
+            <Label Text="Email"></Label>
+            <Entry Text="prashant.gupta@gmail.com" TextColor="#16325c"></Entry>
+            <Label Text="Gender"></Label>
+            <Entry Text="Male" TextColor="#16325c"></Entry>
+            <Label Text="Age"></Label>
+            <Entry Text="28 years" TextColor="#16325c"></Entry>
+        </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

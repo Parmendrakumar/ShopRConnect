@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RetailerApp.View.LoginSignup" BackgroundImage="SplashScreen2.png"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+
+        <Grid RowSpacing="-5" ColumnSpacing="-5" Padding="-2,0,-2,0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="90*" />
+                <RowDefinition Height="10*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="50*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <ActivityIndicator x:Name="Alogin" Color="Red" IsRunning="False" IsVisible="False"></ActivityIndicator>
+            </StackLayout>
+            <Label Grid.Row="1" Grid.Column="0" Text="Signup" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="White" FontSize="Large" BackgroundColor="#f24245">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Signup_Clicked" />
+                </Label.GestureRecognizers>
+            </Label>
+           
+            <Label Grid.Row="1" Grid.Column="1" Text="Login" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="White" FontSize="Large" BackgroundColor="#17a39d">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Login_Clicked" />
+                </Label.GestureRecognizers>
+            </Label>
+
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

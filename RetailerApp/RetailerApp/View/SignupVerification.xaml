@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RetailerApp.View.SignupVerification"
+             BackgroundColor="#17a39d"
+              Title="Verification">    
+  
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="20*"/>
+        </Grid.RowDefinitions>
+
+        <StackLayout Grid.Row="0" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+
+            <Entry x:Name="verify" Placeholder="Enter Verification code" FontSize="18" BackgroundColor="Transparent" PlaceholderColor="White" TextColor="White"></Entry>
+
+            <ActivityIndicator x:Name="Alogin" Color="Red" IsRunning="False"></ActivityIndicator>
+        </StackLayout>
+
+        <StackLayout Grid.Row="1" HeightRequest="50" VerticalOptions="End" Orientation="Horizontal" BackgroundColor="#f24245">
+            <!--<StackLayout x:Name="ButtonStackLayout" Orientation="Horizontal" Spacing="10"  BackgroundColor="#f24245">-->
+
+            <Label x:Name="ButtonLabel" FontSize="Medium" Text="Submit" TextColor="White" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                </Label.GestureRecognizers>
+            </Label>
+
+            <!--</StackLayout>-->
+        </StackLayout>
+    </Grid>
+</ContentPage>

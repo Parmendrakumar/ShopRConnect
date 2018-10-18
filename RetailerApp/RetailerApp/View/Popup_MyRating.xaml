@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             x:Class="RetailerApp.View.Popup_MyRating">
+    <pages:PopupPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="EntryStyle" TargetType="Entry">
+                <Setter Property="PlaceholderColor" Value="#9cdaf1"/>
+                <Setter Property="TextColor" Value="#7dbbe6"/>
+
+            </Style>
+        </ResourceDictionary>
+    </pages:PopupPage.Resources>
+    <!--<pages:PopupPage.Animation>
+        <animations:ScaleAnimation
+      PositionIn="Bottom"
+      PositionOut="Center"
+      ScaleIn="1"
+      ScaleOut="0.7"
+      DurationIn="700"
+      EasingIn="BounceOut"/>
+    </pages:PopupPage.Animation>-->
+    <ScrollView
+    HorizontalOptions="Center"
+    VerticalOptions="Center">
+        <AbsoluteLayout>
+            <Frame
+        x:Name="FrameContainer"
+        Margin="25"
+        HorizontalOptions="Center"
+        BackgroundColor="White">
+                <StackLayout>
+
+
+                    <StackLayout Margin="5">
+
+                        <Label Text="Your Rating" TextColor="#16325c" FontAttributes="Bold" FontSize="25" HorizontalOptions="Center" VerticalOptions="Start" />
+                       
+                        <Label Text="3.2"  TextColor="#16325c" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Start" />
+                        <StackLayout>
+                            <Image Source="myratingp.png"></Image>
+                            <Label Text=""></Label>
+                        </StackLayout>
+                        <StackLayout Margin="0" Padding="-25,0,-35,-35" >
+                            <Grid HorizontalOptions="FillAndExpand" RowSpacing="-10" VerticalOptions="EndAndExpand">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />                                  
+
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HeightRequest="60" TextColor="White" Text="OK"  FontSize="Large" BackgroundColor="#f24245">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1">
+                                            
+                                        </TapGestureRecognizer> 
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </Grid>
+                        </StackLayout>
+
+
+                    </StackLayout>
+
+                </StackLayout>
+            </Frame>
+
+        </AbsoluteLayout>
+    </ScrollView>
+</pages:PopupPage>

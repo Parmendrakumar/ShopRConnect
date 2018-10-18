@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RetailerApp.View.MyStore"
+             xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25*" />
+            <RowDefinition Height="75*" />
+        </Grid.RowDefinitions>
+
+        <cv:CarouselViewControl x:Name="carousel"  Grid.Row="0"                           
+        ItemsSource="{Binding MyItemsSource}"
+        ShowArrows="true"        
+        ShowIndicators="true"  
+        Orientation="Horizontal"></cv:CarouselViewControl>
+
+    
+
+    <ScrollView Grid.Row="1">
+        <StackLayout BackgroundColor="#17a39d">
+            <StackLayout Orientation="Horizontal" Padding="20,5,20,0" >
+
+        <Label x:Name="StrName" Text="{Binding Name}" HorizontalOptions="CenterAndExpand" FontSize="22"  TextColor="White"></Label>
+        <Image Source="edit.png" HorizontalOptions="End" IsVisible="False">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1" NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+    </StackLayout>
+    
+        <StackLayout Orientation="Horizontal" >
+            <Label x:Name="rating" Text="{Binding Rating}" HorizontalOptions="CenterAndExpand" FontSize="16"  TextColor="White"></Label>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" Padding="0,0,0,0" HorizontalOptions="Center" >
+                <Image Source="slImage.png" HorizontalOptions="Center">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"  NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image Source="slImage.png" HorizontalOptions="Center">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"  NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image Source="slImage.png" HorizontalOptions="Center">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"  NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image Source="ratingmy.png" HorizontalOptions="Center">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"  NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image Source="ratingmy.png" HorizontalOptions="Center">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"  NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+        </StackLayout>
+        <StackLayout >
+
+                    <Image x:Name="storeLogo" HeightRequest="60" WidthRequest="150" Source="{Binding StoreLogo}" Aspect="AspectFill" HorizontalOptions="StartAndExpand" ></Image>
+                   
+
+                </StackLayout>
+        <StackLayout BackgroundColor="White" Padding="20,20,20,20" Margin="0,-8,0,0" Spacing="-2">
+                <Label Text="Category" TextColor="#16325c" FontAttributes="Bold" FontSize="14"></Label>
+                <Label x:Name="Category" Text="{Binding Category}" TextColor="#16325c" FontSize="14"></Label>
+                <Label Text="" TextColor="#16325c" FontSize="14"></Label>
+                <Label Text="Sub Category" TextColor="#16325c" IsVisible="False" FontAttributes="Bold" FontSize="14"></Label>
+                <Label x:Name="SubCategory" Text="{Binding SubCategory}" IsVisible="False" TextColor="#16325c" FontSize="14"></Label>
+                <Label Text="" TextColor="#16325c" FontSize="14"></Label>
+                <Label  Text="Outlet Address" FontAttributes="Bold" TextColor="#16325c" FontSize="14"></Label>
+                <Label x:Name="address" Text="{Binding Address}" TextColor="#16325c" FontSize="14"></Label>
+                <Label Text="" TextColor="#16325c" FontSize="14"></Label>
+                <Label Text="Opening Hours" FontAttributes="Bold" TextColor="#16325c" FontSize="14"></Label>
+                <Label x:Name="upenclosetime" Text="{Binding OpenCloseTime}" TextColor="#16325c" FontSize="14"></Label>
+                <!--<Label Text="Tuesday Closed" TextColor="#16325c" FontSize="14"></Label>-->
+                <Label Text="" TextColor="#16325c" FontSize="14"></Label>
+                <Label Text="Contact Numbers" FontAttributes="Bold" TextColor="#16325c" FontSize="14"></Label>
+                <Label x:Name="contextno" Text="{Binding ContactNumber}" TextColor="#16325c" FontSize="14"></Label>
+                <Label Text="" TextColor="#16325c" FontSize="14"></Label>
+                    <BoxView></BoxView>
+        </StackLayout>
+            <!--<StackLayout Margin="0,-10,0,0" BackgroundColor="LightGray">
+                <StackLayout Orientation="Horizontal"  Padding="20,10,20,0" Margin="0,0,0,0">
+                    <Label Text="Offers" TextColor="#16325c" HorizontalOptions="StartAndExpand" FontAttributes="Bold" FontSize="20"></Label>
+                    <Button Text="Add Offer" Clicked="Button_Clicked" TextColor="White" HorizontalOptions="EndAndExpand" HeightRequest="45" BackgroundColor="Red"></Button>
+                </StackLayout>
+
+               
+
+                </StackLayout>-->
+        
+    </StackLayout>
+    </ScrollView>
+
+    </Grid>
+
+</ContentPage>
